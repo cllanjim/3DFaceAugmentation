@@ -1,0 +1,11 @@
+*.opendb
+
+Output
+Intermediate
+Dataset
+
+Libs/dlib/x64
+Libs/dlib/Win32
+Libs/SeetaFaceEngine/FaceIdentification/model/seeta_fr_v1.0.bin
+
+.vs/*
