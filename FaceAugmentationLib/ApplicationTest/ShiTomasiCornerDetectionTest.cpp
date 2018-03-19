@@ -47,6 +47,8 @@ int main()
 	goodFeaturesToTrack_Demo(0, 0);
 
 	waitKey(0);
+	destroyAllWindows();
+
 	return(0);
 }
 

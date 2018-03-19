@@ -59,6 +59,7 @@ void detect_features(Mat img_1, Mat img_2)
 	imshow("Keypoints 2", img_keypoints_2);
 
 	waitKey(0);
+	destroyAllWindows();
 }
 
 /** @function readme */

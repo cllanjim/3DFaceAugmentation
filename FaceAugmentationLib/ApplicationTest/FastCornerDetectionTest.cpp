@@ -40,6 +40,7 @@ int main()
 
 	imshow("keypoints", src);
 	waitKey(0);
+	destroyAllWindows();
 
 	return 0;
 }

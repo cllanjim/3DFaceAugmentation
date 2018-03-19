@@ -42,6 +42,8 @@ int main()
 	cornerHarris_demo(0, 0);
 
 	waitKey(0);
+	destroyAllWindows();
+
 	return(0);
 }
 
