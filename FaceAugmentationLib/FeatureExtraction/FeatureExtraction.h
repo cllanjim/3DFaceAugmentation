@@ -27,7 +27,7 @@ public:
 	struct Feature {
 		std::vector<cv::KeyPoint> keypoints;
 		cv::Mat descriptors;
-		int keypointsSize;
+		int keypointsSize = -1;
 		int descWidth;
 		int descHeight;
 	};
