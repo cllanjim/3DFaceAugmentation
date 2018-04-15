@@ -32,7 +32,7 @@ public:
 	UTILITIES_API Utility();
 
 	/**
-	* Extract facil features on a image. The face
+	* Extract facial features on a image. The face
 	* is detected in this function too. The features
 	* are saved in a txt file.
 	*
@@ -42,25 +42,40 @@ public:
 	* @param crop Flag If true, perform image crop. Otherwise, use the original image.
 	* @param descriptorType The OpenCV descriptor type.
 	* @param detectorType The OpenCV detector type.
-	* @param feat_file_path The output file path that feature info will be save.
+	* @param featuresFilename The output file path that feature info will be save.
 	* @return Struct containing extracted feature information.
 	*/
-	UTILITIES_API FeatureExtraction::Feature ExtractFacialFeatures(BYTE* pixels, int width, int height, bool crop, FeatureExtraction::DescriptorType descriptorType, FeatureExtraction::DetectorType detectorType, std::string feat_file_path);
+	UTILITIES_API FeatureExtraction::Feature ExtractFacialFeatures(BYTE* pixels, int width, int height, bool crop, FeatureExtraction::DescriptorType descriptorType, FeatureExtraction::DetectorType detectorType, std::string featuresFilename);
+
+	/**
+	* Extract facial features on a image. The face
+	* is detected in this function too. The features
+	* are saved in a txt file.
+	*
+	* @param pixels The image data.
+	* @param width The image width.
+	* @param height The image height.
+	* @param descriptorType The OpenCV descriptor type.
+	* @param detectorType The OpenCV detector type.
+	* @param featuresFilename The output file path that feature info will be save.
+	* @return Struct containing extracted feature information.
+	*/
+	UTILITIES_API FeatureExtraction::Feature ExtractFacialFeatures(BYTE* pixels, int width, int height, FeatureExtraction::DescriptorType descriptorType, FeatureExtraction::DetectorType detectorType, std::string featuresFilename);
 
 	/**
 	* Crate a file if it not exists.
 	*
 	* @param The file path.
 	*/
-	UTILITIES_API void CreateNewFile(std::string file_path);
+	UTILITIES_API void CreateNewFile(std::string filename);
 
 	/**
 	* Store the feature information in a file.
 	*
 	* @param feature The struct containing feature information.
-	* @param file_path The output file path.
+	* @param filename The output file path.
 	*/
-	UTILITIES_API void SaveFeatures(FeatureExtraction::Feature feature, std::string file_path);
+	UTILITIES_API void SaveFeatures(FeatureExtraction::Feature feature, std::string filename);
 
 	/**
 	* Detect face in the image, crop to 256x256
@@ -69,9 +84,9 @@ public:
 	* @param pixels The image data.
 	* @param width The image width.
 	* @param height The image height.
-	* @param crop_image_path The destiny path of the cropped image.
+	* @param cropFilename The destiny path of the cropped image.
 	*/
-	UTILITIES_API void CropAndSaveImage(BYTE* pixels, int width, int height, std::string crop_image_path);
+	UTILITIES_API void CropAndSaveImage(BYTE* pixels, int width, int height, std::string cropFilename);
 
 private:
 	static Utility* instance;
