@@ -5,18 +5,45 @@
 */
 #include "Utilities.h"
 
-void ExtractFaceFeaturesTest();
+void CropAndSaveImageTest();
+void ExtractFacialFeaturesTest();
 
 int main()
 {
-	ExtractFaceFeaturesTest();
+	CropAndSaveImageTest();
+	ExtractFacialFeaturesTest();
 
 	return 0;
 }
 
-void ExtractFaceFeaturesTest()
+void CropAndSaveImageTest()
 {
 	std::string image_path = "../../../Dataset/Images/Faces/0000004.jpg";
+	std::string cropped_image_path = "../../../Dataset/Images/Crop_Faces/crop_0000004.jpg";
+
+	cv::Mat image = cv::imread(image_path);
+	
+	if (image.empty())
+	{
+		std::cout << "Unable to load input image." << std::endl;
+		return;
+	}
+
+	std::cout << "Cropping face from \"" << image_path << "\"..." << std::endl;
+
+	Utility::Instance().CropAndSaveImage(image.data, image.cols, image.rows, cropped_image_path);
+
+	std::cout << "Cropped image has been saved in \"" << cropped_image_path << "\"..." << std::endl;
+	std::system("pause");
+}
+
+void ExtractFacialFeaturesTest()
+{
+	// For original image.
+	/*std::string image_path = "../../../Dataset/Images/Faces/0000004.jpg";*/
+
+	// For cropped image.
+	std::string image_path = "../../../Dataset/Images/Crop_Faces/crop_0000004.jpg";
 
 	std::cout << "Extracting features from \"" << image_path << "\"..." << std::endl;
 
@@ -26,8 +53,15 @@ void ExtractFaceFeaturesTest()
 	FeatureExtraction::DescriptorType descriptorType = FeatureExtraction::DescriptorType::ORB;
 	std::string feat_file_path = "features.txt";
 
-	FeatureExtraction::Feature feature = Utility::Instance().ExtractFaceFeatures
-	(image.data, image.cols, image.rows, descriptorType, detectorType, feat_file_path);
+	// Call this way to if the input image
+	// has already been cropped.
+	FeatureExtraction::Feature feature = Utility::Instance().ExtractFacialFeatures
+	(image.data, image.cols, image.rows, false, descriptorType, detectorType, feat_file_path);
+
+	// Call this way to perform face crop before
+	// extracting the features.
+	/*FeatureExtraction::Feature feature = Utility::Instance().ExtractFacialFeatures
+	(image.data, image.cols, image.rows, true, descriptorType, detectorType, feat_file_path);*/
 
 	if (feature.keypointsSize == -1)
 	{

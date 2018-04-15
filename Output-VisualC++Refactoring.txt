@@ -1,0 +1,24 @@
+﻿
+Renamed 'SaveFeatureOnFile' to 'SaveFeatures':
+----------------------------------------------
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\Utilities\Utilities.cpp(39, 6)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\Utilities\Utilities.cpp(61, 15)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\Utilities\Utilities.h(53, 21)
+
+Renamed 'ExtractFaceFeaturesTest' to 'ExtractFaceFeaturesWithCropTest':
+-----------------------------------------------------------------------
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\ApplicationTest\UtilitiesTest.cpp(8, 6)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\ApplicationTest\UtilitiesTest.cpp(13, 2)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\ApplicationTest\UtilitiesTest.cpp(18, 6)
+
+Renamed 'ExtractFaceFeaturesWithCropTest' to 'ExtractFacialFeaturesWithCropTest':
+---------------------------------------------------------------------------------
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\ApplicationTest\UtilitiesTest.cpp(9, 6)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\ApplicationTest\UtilitiesTest.cpp(14, 2)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\ApplicationTest\UtilitiesTest.cpp(19, 6)
+
+Renamed 'ExtractFaceFeatures' to 'ExtractFacialFeatures':
+---------------------------------------------------------
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\ApplicationTest\UtilitiesTest.cpp(31, 59)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\Utilities\Utilities.cpp(17, 37)
+c:\Projects\3DFaceAugmentation\FaceAugmentationLib\Utilities\Utilities.h(48, 43)
