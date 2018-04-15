@@ -1,8 +1,14 @@
+/**
+*
+* This is a test for feature extraction task using OpenCV detectors and descriptors.
+*
+*/
+
 #include "FeatureExtraction.h"
 
 int main()
 {
-	cv::Mat image = cv::imread("../../../Dataset/Images/Faces/0000003.jpg");
+	cv::Mat image = cv::imread("../../../Dataset/Images/Faces/0000004.jpg");
 
 	FeatureExtraction::DetectorType detectorType = FeatureExtraction::DetectorType::ORB;
 	FeatureExtraction::DescriptorType descriptorType = FeatureExtraction::DescriptorType::ORB;

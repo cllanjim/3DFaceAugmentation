@@ -2,7 +2,6 @@
 *
 * This is a test for feature detection task using OpenCV FAST corner detection.
 *
-* @since 2018-03-17
 */
 
 #include "opencv2\highgui.hpp"

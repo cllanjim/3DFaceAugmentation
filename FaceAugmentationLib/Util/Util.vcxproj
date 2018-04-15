@@ -205,8 +205,6 @@ xcopy /d /y "$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\model\seeta_fa_v1.
 xcopy /d /y "$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\model\seeta_fr_v1.0.bin" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
