@@ -3,7 +3,8 @@
 Output
 Intermediate
 Dataset
-MatLab
+MatLab/3DModels
+MatLab/features.txt
 
 Libs/dlib/x64
 Libs/dlib/Win32
