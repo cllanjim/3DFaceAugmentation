@@ -1,6 +1,6 @@
-width=640;
-height=480;
-model_name='3DModels/Faces/Model_2/3DScan.obj';
+width = 640;
+height = 480;
+model_name = '3DModels/Faces/Model_2/3DScan.obj';
 features_filename = 'features.txt';
 
 %% STEP 1 - RENDER 3D REFERENCE MODEL, DETECT SPECIFIC FACIAL FEATURES, GET THEIR 3D COORDINATES ON THE 3D MODEL.
@@ -24,8 +24,8 @@ if exist(features_filename, 'file') == 2
     pts_2D = uint32(kps.data());
     %disp(pts_2D)
 
-%     hold on;
-%     plot(pts_2D(:,1), pts_2D(:,2), '.');
+    %hold on;
+    %plot(pts_2D(:,1), pts_2D(:,2), '.');
     
     pts_3D=zeros(size(pts_2D, 1), 3);
     
@@ -35,18 +35,11 @@ if exist(features_filename, 'file') == 2
     end   
     disp(pts_3D);
     
-    %[depth, rendered, unproject] = renderer(width, height, model_name, 0, 0, outA, outR, outT);
-    %figure, imshow(rendered);
-    hold on;
-    plot3(pts_3D(:, 1), pts_3D(:, 2), pts_3D(:, 3), '.');
+    %hold on;
+    %plot3(pts_3D(:, 1), pts_3D(:, 2), pts_3D(:, 3), '.');
     
-%     % Rotate
-%     for pitch=0:10:360
-%         [~, rendered]=renderer(width, height, model_name, 0, 0, 0, pitch, 0, 0,'zxy');
-%         figure(1); imshow(rendered); pause;
-%     end
-    
-    %[outA, R_new, T_new] = doCalib(width, height, pts_2D, pts_3D, outA, [], []);
+    addpath('calib/')
+    [outA, R_new, T_new] = doCalib(width, height, pts_2D, pts_3D, outA, [], []);
 end
 
 
