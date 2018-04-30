@@ -41,7 +41,7 @@ void ExtractFacialFeaturesTest()
 {
 	bool crop = false;
 	// For original image.
-	std::string imageFilename = "../../../Dataset/Images/Faces/0000004.jpg";
+	std::string imageFilename = "../../../Dataset/Images/Faces/0000006.jpg";
 
 	// For cropped image.
 	//std::string imageFilename = "../../../Dataset/Images/Crop_Faces/crop_0000004.jpg";
@@ -50,7 +50,7 @@ void ExtractFacialFeaturesTest()
 
 	cv::Mat image = cv::imread(imageFilename);
 
-	FeatureExtraction::DetectorType detectorType = FeatureExtraction::DetectorType::ORB;
+	FeatureExtraction::DetectorType detectorType = FeatureExtraction::DetectorType::BRISK;
 	FeatureExtraction::DescriptorType descriptorType = FeatureExtraction::DescriptorType::ORB;
 	std::string featuresFilename = "features.txt";
 

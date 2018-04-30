@@ -28,6 +28,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FeatureExtraction", "FaceAu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utilities", "FaceAugmentationLib\Utilities\Utilities.vcxproj", "{FC33227C-96E0-41CF-9093-1740EFCD878A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PoseEstimation", "FaceAugmentationLib\PoseEstimation\PoseEstimation.vcxproj", "{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -108,6 +110,14 @@ Global
 		{FC33227C-96E0-41CF-9093-1740EFCD878A}.Release|x64.Build.0 = Release|x64
 		{FC33227C-96E0-41CF-9093-1740EFCD878A}.Release|x86.ActiveCfg = Release|Win32
 		{FC33227C-96E0-41CF-9093-1740EFCD878A}.Release|x86.Build.0 = Release|Win32
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Debug|x64.ActiveCfg = Debug|x64
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Debug|x64.Build.0 = Debug|x64
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Debug|x86.Build.0 = Debug|Win32
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Release|x64.ActiveCfg = Release|x64
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Release|x64.Build.0 = Release|x64
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Release|x86.ActiveCfg = Release|Win32
+		{FE3CE8BC-8DC5-4CD6-A7FA-3E2A5385C585}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

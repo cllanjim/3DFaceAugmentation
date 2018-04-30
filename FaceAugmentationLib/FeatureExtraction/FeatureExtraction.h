@@ -22,7 +22,7 @@ class FeatureExtraction
 {
 public:
 	/**
-	* Represents the feature.
+	* Represents the extracted feature.
 	*/
 	struct Feature {
 		std::vector<cv::KeyPoint> keypoints;
