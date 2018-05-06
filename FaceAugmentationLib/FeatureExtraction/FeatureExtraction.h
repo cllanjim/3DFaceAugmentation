@@ -27,7 +27,7 @@ public:
 	struct Feature {
 		std::vector<cv::KeyPoint> keypoints;
 		cv::Mat descriptors;
-		int keypointsSize = -1;
+		int keypointsSize = 0;
 		int descWidth;
 		int descHeight;
 	};
@@ -48,6 +48,9 @@ public:
 		AKAZE, BRIEF, BRISK, DAISY, FREAK, KAZE, LATCH, LUCID, ORB, SIFT, SURF
 	};
 
+	/**
+	* Public static singleton instance.
+	*/
 	static FEATUREEXTRACTION_API FeatureExtraction& Instance();
 
 	/**
@@ -68,6 +71,9 @@ public:
 	FEATUREEXTRACTION_API FeatureExtraction::Feature ExtractFeatures(BYTE* pixels, int width, int height, DescriptorType descriptorType, DetectorType detectorType);
 
 private:
+	/**
+	* Private static singleton instance.
+	*/
 	static FeatureExtraction* instance;
 
 	/**

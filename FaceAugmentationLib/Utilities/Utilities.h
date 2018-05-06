@@ -24,6 +24,9 @@
 class Utility
 {
 public:
+	/**
+	* Public static singleton instance.
+	*/
 	static UTILITIES_API Utility& Instance();
 
 	/**
@@ -89,15 +92,34 @@ public:
 	UTILITIES_API void CropAndSaveImage(BYTE* pixels, int width, int height, std::string cropFilename);
 
 	/**
-	* TODO
+	* Read 3D points from a text file.
 	*
 	* @param points3DFilename The input file name that contains the 3D points of the model.
 	* @return A vector of 3D points.
 	*/
 	UTILITIES_API std::vector<cv::Point3d> Read3DPoints(std::string points3DFilename);
 
+	/**
+	* Convert features key points to Opencv
+	* 2D points.
+	*
+	* @param keypoints The features key points.
+	* @return A vector of 2D points.
+	*/
+	UTILITIES_API std::vector<cv::Point2d> ParseKeyPointsTo2DPoints(std::vector<cv::KeyPoint> keypoints);
+
 private:
+	/**
+	* Private static singleton instance.
+	*/
 	static Utility* instance;
 
+	/**
+	* String tokenizer.
+	*
+	* @param str The string to be splitted.
+	* @param c The token.
+	* @return A vector of strings.
+	*/
 	UTILITIES_API std::vector<std::string> Split(const char *str, char c);
 };

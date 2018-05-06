@@ -54,16 +54,6 @@ void ExtractFacialFeaturesTest()
 	FeatureExtraction::DescriptorType descriptorType = FeatureExtraction::DescriptorType::ORB;
 	std::string featuresFilename = "features.txt";
 
-	// Call this way if the input image
-	// has already been cropped.
-	/*FeatureExtraction::Feature feature = Utility::Instance().ExtractFacialFeatures
-	(image.data, image.cols, image.rows, false, descriptorType, detectorType, featuresFilename);*/
-
-	// Call this way if a facial cropping
-	// was performed before.
-	/*FeatureExtraction::Feature feature = Utility::Instance().ExtractFacialFeatures
-	(image.data, image.cols, image.rows, false, descriptorType, detectorType, featuresFilename);*/
-
 	FeatureExtraction::Feature feature = Utility::Instance().ExtractFacialFeatures
 	(image.data, image.cols, image.rows, descriptorType, detectorType, featuresFilename);
 
