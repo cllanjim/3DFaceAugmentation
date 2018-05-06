@@ -78,8 +78,8 @@ public:
 	UTILITIES_API void SaveFeatures(FeatureExtraction::Feature feature, std::string filename);
 
 	/**
-	* Detect face in the image, crop to 256x256
-	* and create a face cropped image.
+	* Detect a face in the image, crop it to 256x256
+	* size and write it as a new image.
 	*
 	* @param pixels The image data.
 	* @param width The image width.
@@ -88,6 +88,16 @@ public:
 	*/
 	UTILITIES_API void CropAndSaveImage(BYTE* pixels, int width, int height, std::string cropFilename);
 
+	/**
+	* TODO
+	*
+	* @param points3DFilename The input file name that contains the 3D points of the model.
+	* @return A vector of 3D points.
+	*/
+	UTILITIES_API std::vector<cv::Point3d> Read3DPoints(std::string points3DFilename);
+
 private:
 	static Utility* instance;
+
+	UTILITIES_API std::vector<std::string> Split(const char *str, char c);
 };

@@ -101,7 +101,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\;$(SolutionDir)FaceAugmentationLib\PoseEstimation\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,7 +109,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);C:\opencv\opencv-dev\build\install\x64\vc15\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core341.lib;opencv_highgui341.lib;opencv_imgproc341.lib;opencv_features2d341.lib;opencv_imgcodecs341.lib;opencv_calib3d341.lib;opencv_flann341.lib;opencv_ml341.lib;opencv_objdetect341.lib;opencv_tracking341.lib;opencv_video341.lib;opencv_videoio341.lib;opencv_videostab341.lib;opencv_xfeatures2d341.lib;opencv_ximgproc341.lib;FaceDetection.lib;FaceAlignment.lib;FaceIdentification.lib;SeetaFaceDetection.lib;FeatureExtraction.lib;Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_core341.lib;opencv_highgui341.lib;opencv_imgproc341.lib;opencv_features2d341.lib;opencv_imgcodecs341.lib;opencv_calib3d341.lib;opencv_flann341.lib;opencv_ml341.lib;opencv_objdetect341.lib;opencv_tracking341.lib;opencv_video341.lib;opencv_videoio341.lib;opencv_videostab341.lib;opencv_xfeatures2d341.lib;opencv_ximgproc341.lib;FaceDetection.lib;FaceAlignment.lib;FaceIdentification.lib;SeetaFaceDetection.lib;FeatureExtraction.lib;Utilities.lib;PoseEstimation.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -121,13 +121,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\;$(SolutionDir)FaceAugmentationLib\PoseEstimation\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FaceDetectiond.lib;FaceAlignmentd.lib;FaceIdentificationd.lib;%(AdditionalDependencies);SeetaFaceDetectiond.lib;FeatureExtractiond.lib;Utilitiesd.lib</AdditionalDependencies>
+      <AdditionalDependencies>FaceDetectiond.lib;FaceAlignmentd.lib;FaceIdentificationd.lib;SeetaFaceDetectiond.lib;FeatureExtractiond.lib;Utilitiesd.lib;PoseEstimationd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -139,13 +139,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\;$(SolutionDir)FaceAugmentationLib\PoseEstimation\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);C:\opencv\opencv-dev\build\install\x64\vc15\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core341d.lib;opencv_highgui341d.lib;opencv_imgproc341d.lib;opencv_features2d341d.lib;opencv_imgcodecs341d.lib;opencv_calib3d341d.lib;opencv_flann341d.lib;opencv_ml341d.lib;opencv_objdetect341d.lib;opencv_tracking341d.lib;opencv_video341d.lib;opencv_videoio341d.lib;opencv_videostab341d.lib;opencv_xfeatures2d341d.lib;opencv_ximgproc341d.lib;FaceDetectiond.lib;FaceAlignmentd.lib;FaceIdentificationd.lib;SeetaFaceDetectiond.lib;FeatureExtractiond.lib;Utilitiesd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_core341d.lib;opencv_highgui341d.lib;opencv_imgproc341d.lib;opencv_features2d341d.lib;opencv_imgcodecs341d.lib;opencv_calib3d341d.lib;opencv_flann341d.lib;opencv_ml341d.lib;opencv_objdetect341d.lib;opencv_tracking341d.lib;opencv_video341d.lib;opencv_videoio341d.lib;opencv_videostab341d.lib;opencv_xfeatures2d341d.lib;opencv_ximgproc341d.lib;FaceDetectiond.lib;FaceAlignmentd.lib;FaceIdentificationd.lib;SeetaFaceDetectiond.lib;FeatureExtractiond.lib;Utilitiesd.lib;PoseEstimationd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -159,7 +159,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\opencv-dev\build\install\include;$(SolutionDir)Libs\SeetaFaceEngine\FaceDetection\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceAlignment\include\;$(SolutionDir)Libs\SeetaFaceEngine\FaceIdentification\include\;$(SolutionDir)Libs\dlib\..;$(SolutionDir)FaceAugmentationLib\SeetaFaceDetection\;$(SolutionDir)FaceAugmentationLib\FeatureExtraction\;$(SolutionDir)FaceAugmentationLib\Utilities\;$(SolutionDir)FaceAugmentationLib\PoseEstimation\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,7 +167,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FaceDetection.lib;FaceAlignment.lib;FaceIdentification.lib;SeetaFaceDetection.lib;FeatureExtraction.lib;Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FaceDetection.lib;FaceAlignment.lib;FaceIdentification.lib;SeetaFaceDetection.lib;FeatureExtraction.lib;Utilities.lib;PoseEstimation.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -189,6 +189,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="PoseEstimationTest.cpp" />
     <ClCompile Include="SeetaFaceDetectionTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -214,10 +215,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="UtilitiesTest.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +233,9 @@
     </ProjectReference>
     <ProjectReference Include="..\FeatureExtraction\FeatureExtraction.vcxproj">
       <Project>{66ddbe6d-1220-44ab-a904-6aa9ea88d39d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PoseEstimation\PoseEstimation.vcxproj">
+      <Project>{fe3ce8bc-8dc5-4cd6-a7fa-3e2a5385c585}</Project>
     </ProjectReference>
     <ProjectReference Include="..\SeetaFaceDetection\SeetaFaceDetection.vcxproj">
       <Project>{0d2c9118-1a56-43f7-b048-26309df72313}</Project>

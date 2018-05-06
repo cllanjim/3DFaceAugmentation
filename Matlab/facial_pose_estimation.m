@@ -38,5 +38,5 @@ if exist(keypoints_file, 'file') == 2
     end   
     
     fileID = fopen(pts3D_file,'w');
-    fprintf(fileID,'%6.5f %6.5f %6.5f\r\n',pts_3D);
+    fprintf(fileID,'%6.5f %6.5f %6.5f\n',pts_3D);
 end
