@@ -1,7 +1,8 @@
 %% General initialization
 width=1024;
 height=width;
-model_name='MiPOSat.osg';
+%model_name='3DModels/Faces/Model_2/3DScan.obj';
+model_name='3DModels/Others/MiPOSat.osg';
 %% Basic examples
 % Performs the rendering. However, since no output parameters were passed nothing is returned.
 % renderer(width,height,model_name);
@@ -10,14 +11,14 @@ model_name='MiPOSat.osg';
 % renderer(width,height,model_name,1);
 
 % Returns the depth matrix and rendered image to MATLAB. No output files are written. This is the preferred usage.
-% [depth, rendered]=renderer(width,height, model_name);
+%[depth, rendered]=renderer(width,height, model_name);
 
 % Displays the results.
-% figure, imshow(depth); figure, imshow(rendered);
+%figure, imshow(depth); figure, imshow(rendered);
 
 % Also returns the camera matrices - A,R and T as well as the unprojection matrix.
 % Now 'unproject(125,149,1:3)' returns the world XYZ coordinate of the image point (x=148,y=124)
-% [depth, rendered, unproject, A, R, T]=renderer(width,height, model_name);
+[depth, rendered, unproject, A, R, T]=renderer(width,height, model_name);
 
 % Renders the mesh with a distance of 0.5, an elevation of 10 degrees, azimuth of 20 degrees and yaw of 30 degrees.
 % [depth, rendered, unproject, A, R, T]=renderer(width,height, model_name,0,0,0.5,0,0,0,'zxy');
@@ -26,14 +27,14 @@ model_name='MiPOSat.osg';
 % figure, imshow(depth); figure, imshow(rendered);
 
 % Providing the camera matrices returned from the previous example will yield the same results.
-% [depth, rendered, unproject]=renderer(width,height, model_name,0,0,A,R,T);
-% figure, imshow(rendered);
+[depth, rendered, unproject]=renderer(width,height, model_name,0,0,A,R,T);
+figure, imshow(rendered);
 
 % View the 3D points of the model
-% figure, plot3(unproject(:,:,1),unproject(:,:,2),unproject(:,:,3),'.');
+figure, plot3(unproject(:,:,1),unproject(:,:,2),unproject(:,:,3),'.');
 %% Pose estimation sanity
-[depth, rendered, unproject, A, R, T]=renderer(width, height, model_name);
-figure, imshow(rendered);
+% [depth, rendered, unproject, A, R, T]=renderer(width, height, model_name);
+% figure, imshow(rendered);
 % 
 % % collect dummy landmarks from the 2D rendered image and the 3D model points
 % % If you are fitting a different 2D image (texture), first resize it. e.g.

@@ -108,6 +108,8 @@ public:
 	*/
 	UTILITIES_API std::vector<cv::Point2d> ParseKeyPointsTo2DPoints(std::vector<cv::KeyPoint> keypoints);
 
+	UTILITIES_API void DrawLines(std::vector<cv::Point2d> imagePoints, std::vector<cv::Point2d> projPoints, cv::Mat &outputImage);
+
 private:
 	/**
 	* Private static singleton instance.
