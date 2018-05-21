@@ -25,11 +25,11 @@
 #ifndef PNGPRIV_H
 #define PNGPRIV_H
 
-/* Feature Test Macros.  The following are defined here to ensure that correctly
+/* Features Test Macros.  The following are defined here to ensure that correctly
  * implemented libraries reveal the APIs libpng needs to build and hide those
  * that are not needed and potentially damaging to the compilation.
  *
- * Feature Test Macros must be defined before any system header is included (see
+ * Features Test Macros must be defined before any system header is included (see
  * POSIX 1003.1 2.8.2 "POSIX Symbols."
  *
  * These macros only have an effect if the operating system supports either

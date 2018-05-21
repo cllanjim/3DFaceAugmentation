@@ -1,15 +1,15 @@
-width = 1200; % 3D model width.
-height = 675; % 3D model height.
-model_name = '3DModels/Faces/Model_2/3DScan.obj'; % 3D model.
-keypoints_file = 'features1.txt'; % Input 2D points.
-pts3D_file = '3D_points2.txt'; % Output 3D corresponce points.
+width = 640;
+height = 480;
+model = '3DModels/Faces/Model_2/3DScan.obj'; % 3D model.
+keypoints = '../Dataset/Correspondences/000001_pts2d.txt'; % Input 2D points.
+pts3D_file = '../Dataset/Correspondences/000001_pts3d.txt'; % Output 3D corresponce points.
 
 % % 1.1 Render the 3D model.
-%[refDepth, refRendered, refUnproject, outA, outR, outT] = renderer(width, height, model_name, 0, 0, 0, -90, 0, 0, 'zxy');
-[refDepth, refRendered, refUnproject, outA, outR, outT]=renderer(width, height, model_name);
+[refDepth, refRendered, refUnproject, outA, outR, outT] = renderer(width, height, model, 0, 0, 0, -90, 0, 0, 'zxy');
+%[refDepth, refRendered, refUnproject, outA, outR, outT]=renderer(width, height, model_name);
 
 % Display the results.
-% figure, imshow(refRendered);
+figure, imshow(refRendered);
 
 % Display the 3D points of the model.
 % figure, plot3(refUnproject(:,:,1),refUnproject(:,:,2),refUnproject(:,:,3),'.');

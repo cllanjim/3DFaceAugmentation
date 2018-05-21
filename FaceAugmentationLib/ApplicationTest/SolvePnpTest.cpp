@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
 
 	// Read input image
-	cv::Mat im = cv::imread("../../../Dataset/Images/Faces/headPose.jpg");
+	cv::Mat im = cv::imread("../../../Dataset/Images/Faces/000002.jpg");
 
 	// 2D image points. If you change the image, you need to change vector
 	std::vector<cv::Point2d> image_points;
@@ -27,13 +27,14 @@ int main(int argc, char **argv)
 	model_points.push_back(cv::Point3d(-150.0f, -150.0f, -125.0f));      // Left Mouth corner
 	model_points.push_back(cv::Point3d(150.0f, -150.0f, -125.0f));       // Right mouth corner
 
-																		 // Camera internals
+	// Camera internals
 	double focal_length = im.cols; // Approximate focal length.
 	Point2d center = cv::Point2d(im.cols / 2, im.rows / 2);
 	cv::Mat camera_matrix = (cv::Mat_<double>(3, 3) << focal_length, 0, center.x, 0, focal_length, center.y, 0, 0, 1);
 	cv::Mat dist_coeffs = cv::Mat::zeros(4, 1, cv::DataType<double>::type); // Assuming no lens distortion
 
 	cout << "Camera Matrix " << endl << camera_matrix << endl;
+	cout << "dist_coeffs " << endl << dist_coeffs << endl;
 	// Output rotation and translation
 	cv::Mat rotation_vector; // Rotation in axis-angle form
 	cv::Mat translation_vector;

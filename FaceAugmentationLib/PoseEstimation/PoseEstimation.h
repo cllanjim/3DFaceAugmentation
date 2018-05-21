@@ -19,52 +19,18 @@
 class PoseEstimation 
 {
 public:
-
 	/**
 	* Represents the camera parameters.
 	*/
 	struct CameraInternals
 	{
 	public:
-		/**
-		* Approximate focal length.
-		*/
-		double focalLength;
-		/**
-		* Image center.
-		*/
-		cv::Point2d center;
-		/**
-		* 
-		*/
-		cv::Mat cameraMatrix;
-		/**
-		* Assuming no lens distortion
-		*/
+		cv::Mat A;
+		cv::Mat R;
+		cv::Mat T;
 		cv::Mat distCoeffs;
-
-		CameraInternals() {}
-
-		CameraInternals(cv::Mat image) 
-		{
-			focalLength = image.cols;
-			center = cv::Point2d(image.cols / 2, image.rows / 2);
-			cameraMatrix = (cv::Mat_<double>(3, 3) << focalLength, 0, center.x, 0, focalLength, center.y, 0, 0, 1);
-			distCoeffs = cv::Mat::zeros(4, 1, cv::DataType<double>::type);
-		}
-
-		CameraInternals(double fl, cv::Point2d ct) 
-		{
-			focalLength = fl;
-			center = ct;
-			cameraMatrix = (cv::Mat_<double>(3, 3) << focalLength, 0, center.x, 0, focalLength, center.y, 0, 0, 1);
-			distCoeffs = cv::Mat::zeros(4, 1, cv::DataType<double>::type);
-		}
 	};
 
-	/**
-	* Public static singleton instance.
-	*/
 	static POSEESTIMATION_API PoseEstimation& Instance();
 
 	/**
@@ -73,7 +39,21 @@ public:
 	POSEESTIMATION_API PoseEstimation();
 
 	/**
-	* Calculate the head pose of faces in 2D images.
+	* Finds an object pose from 3D-2D point correspondence.
+	*
+	* @param modelPoints The 3D object points.
+	* @param imagePoints The 2D image points.
+	* @param cameraInternals The camera parameters.
+	* @param ransac Flag for performing RANSAC.
+	* @param rotationVector The ouput rotation vector.
+	* @param translationVector The output translation vector.
+	*/
+	POSEESTIMATION_API void EstimateHeadPose(std::vector<cv::Point3d> modelPoints, std::vector<cv::Point2d> imagePoints,
+											CameraInternals cameraInternals, bool ransac, cv::Mat &rotationVector, cv::Mat &translationVector);
+
+	/**
+	* Computes projections of 3D points to the image plane given intrisic
+	* and extrinsic camera parameters.
 	*
 	* @param image The input 2D image.
 	* @param modelPoints The 3D corresponence points.
@@ -81,15 +61,8 @@ public:
 	* @param rotationVector The output rotation vector.
 	* @param translationVector The output translation vector.
 	*/
-	POSEESTIMATION_API void EstimateHeadPose(cv::Mat image, std::vector<cv::Point3d> modelPoints, std::vector<cv::Point2d> imagePoints,
-												CameraInternals cameraInternals, bool ransac, cv::Mat &rotationVector, cv::Mat &translationVector);
-
-
 	POSEESTIMATION_API void ProjectPoints(std::vector<cv::Point3d> modelPoints, CameraInternals cameraInternals,
 											cv::Mat rotationVector, cv::Mat translationVector, std::vector<cv::Point2d> &projPoints);
 private:
-	/**
-	* Private static singleton instance.
-	*/
 	static PoseEstimation* instance;
 };

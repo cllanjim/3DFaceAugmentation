@@ -15,6 +15,7 @@
 
 #include "SeetaFaceDetection.h"
 #include "FeatureExtraction.h"
+#include "PoseEstimation.h"
 #include <opencv2\features2d.hpp>
 #include "opencv2\xfeatures2d.hpp"
 #include <opencv2\opencv.hpp>
@@ -24,9 +25,6 @@
 class Utility
 {
 public:
-	/**
-	* Public static singleton instance.
-	*/
 	static UTILITIES_API Utility& Instance();
 
 	/**
@@ -34,86 +32,58 @@ public:
 	*/
 	UTILITIES_API Utility();
 
-	/**
-	* Extract facial features on a image. The face
-	* is detected in this function too. The features
-	* are saved in a txt file.
-	*
-	* @param pixels The image data.
-	* @param width The image width.
-	* @param height The image height.
-	* @param crop Flag If true, perform image crop. Otherwise, use the original image.
-	* @param descriptorType The OpenCV descriptor type.
-	* @param detectorType The OpenCV detector type.
-	* @param featuresFilename The output file path that feature info will be save.
-	* @return Struct containing extracted feature information.
-	*/
-	UTILITIES_API FeatureExtraction::Feature ExtractFacialFeatures(BYTE* pixels, int width, int height, bool crop, FeatureExtraction::DescriptorType descriptorType, FeatureExtraction::DetectorType detectorType, std::string featuresFilename);
+	UTILITIES_API void SaveKeypoints(std::vector<cv::KeyPoint> keypoints, std::string file);
 
 	/**
-	* Extract facial features on a image. The face
-	* is detected in this function too. The features
-	* are saved in a txt file.
-	*
-	* @param pixels The image data.
-	* @param width The image width.
-	* @param height The image height.
-	* @param descriptorType The OpenCV descriptor type.
-	* @param detectorType The OpenCV detector type.
-	* @param featuresFilename The output file path that feature info will be save.
-	* @return Struct containing extracted feature information.
-	*/
-	UTILITIES_API FeatureExtraction::Feature ExtractFacialFeatures(BYTE* pixels, int width, int height, FeatureExtraction::DescriptorType descriptorType, FeatureExtraction::DetectorType detectorType, std::string featuresFilename);
-
-	/**
-	* Crate a file if it not exists.
+	* Crates a file if it not exists.
 	*
 	* @param The file path.
 	*/
-	UTILITIES_API void CreateNewFile(std::string filename);
+	UTILITIES_API void CreateNewFile(std::string file);
 
 	/**
-	* Store the feature information in a file.
-	*
-	* @param feature The struct containing feature information.
-	* @param filename The output file path.
-	*/
-	UTILITIES_API void SaveFeatures(FeatureExtraction::Feature feature, std::string filename);
-
-	/**
-	* Detect a face in the image, crop it to 256x256
-	* size and write it as a new image.
-	*
-	* @param pixels The image data.
-	* @param width The image width.
-	* @param height The image height.
-	* @param cropFilename The destiny path of the cropped image.
-	*/
-	UTILITIES_API void CropAndSaveImage(BYTE* pixels, int width, int height, std::string cropFilename);
-
-	/**
-	* Read 3D points from a text file.
+	* Reads 3D points from a text file.
 	*
 	* @param points3DFilename The input file name that contains the 3D points of the model.
 	* @return A vector of 3D points.
 	*/
-	UTILITIES_API std::vector<cv::Point3d> Read3DPoints(std::string points3DFilename);
+	UTILITIES_API void Read3DPoints(std::vector<cv::Point3d> &points, std::string file);
 
-	/**
-	* Convert features key points to Opencv
-	* 2D points.
-	*
-	* @param keypoints The features key points.
-	* @return A vector of 2D points.
-	*/
-	UTILITIES_API std::vector<cv::Point2d> ParseKeyPointsTo2DPoints(std::vector<cv::KeyPoint> keypoints);
+	UTILITIES_API void ReadCameraParams(PoseEstimation::CameraInternals &cameraInternals, std::string file);
 
-	UTILITIES_API void DrawLines(std::vector<cv::Point2d> imagePoints, std::vector<cv::Point2d> projPoints, cv::Mat &outputImage);
+	///**
+	//* Stores the feature information in a file.
+	//*
+	//* @param feature The struct containing feature information.
+	//* @param filename The output file path.
+	//*/
+	//UTILITIES_API void SaveFeatures(FeatureExtraction::Features feature, std::string filename);
+
+	///**
+	//* Detects a face in the image, crop it to 256x256
+	//* size and write it as a new image.
+	//*
+	//* @param pixels The image data.
+	//* @param width The image width.
+	//* @param height The image height.
+	//* @param cropFilename The destiny path of the cropped image.
+	//*/
+	//UTILITIES_API void CropAndSaveImage(BYTE* pixels, int width, int height, std::string cropFilename);
+
+	///**
+	//* Converts features key points to Opencv
+	//* 2D points.
+	//*
+	//* @param keypoints The features key points.
+	//* @return A vector of 2D points.
+	//*/
+	//UTILITIES_API std::vector<cv::Point2d> ParseKeyPointsTo2DPoints(std::vector<cv::KeyPoint> keypoints);
+
+	//UTILITIES_API void DrawLines(std::vector<cv::Point2d> imagePoints, std::vector<cv::Point2d> projPoints, cv::Mat &outputImage);
+
+	//
 
 private:
-	/**
-	* Private static singleton instance.
-	*/
 	static Utility* instance;
 
 	/**

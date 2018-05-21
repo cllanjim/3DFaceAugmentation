@@ -54,7 +54,7 @@ void ExtractFacialFeaturesTest()
 	FeatureExtraction::DescriptorType descriptorType = FeatureExtraction::DescriptorType::ORB;
 	std::string featuresFilename = "features.txt";
 
-	FeatureExtraction::Feature feature = Utility::Instance().ExtractFacialFeatures
+	FeatureExtraction::Features feature = Utility::Instance().ExtractFacialFeatures
 	(image.data, image.cols, image.rows, descriptorType, detectorType, featuresFilename);
 
 

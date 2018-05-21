@@ -18,7 +18,7 @@ model_name='3DModels/Others/MiPOSat.osg';
 
 % Also returns the camera matrices - A,R and T as well as the unprojection matrix.
 % Now 'unproject(125,149,1:3)' returns the world XYZ coordinate of the image point (x=148,y=124)
-[depth, rendered, unproject, A, R, T]=renderer(width,height, model_name);
+[depth, rendered, unproject, A, R, T]=renderer(width, height, model_name);
 
 % Renders the mesh with a distance of 0.5, an elevation of 10 degrees, azimuth of 20 degrees and yaw of 30 degrees.
 % [depth, rendered, unproject, A, R, T]=renderer(width,height, model_name,0,0,0.5,0,0,0,'zxy');

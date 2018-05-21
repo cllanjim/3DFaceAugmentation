@@ -59,7 +59,7 @@ public:
 	SEETAFACEDETECTION_API Face* DetectFaces(BYTE* pixels, int width, int height, bool detectEyes, bool detectSmile, bool writeLog, int& facecount, long long& duration);
 
 	/**
-	* Crop a face image based on the face landmarks. 
+	* Crops a face image based on face landmarks. 
 	* The image is resized to 256x256 pixels.
 	*
 	* @param pixels The image data.
